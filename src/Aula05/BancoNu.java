@@ -6,7 +6,7 @@ public class BancoNu {
     private String dono;
     private float saldo;
     private boolean status;
-    //Métodos Especiais
+//Métodos Especiais
 
     public BancoNu() {
         this.setSaldo(0);
@@ -17,42 +17,42 @@ public class BancoNu {
         return this.num_Conta;
     }
 
-    public void setNum_Conta(int n) {
-        this.num_Conta = n;
+    public void setNum_Conta(int num_Conta) {
+        this.num_Conta = num_Conta;
     }
 
     public String getTipo_Conta() {
         return this.tipo_Conta;
     }
 
-    public void setTipo_Conta(String t) {
-        this.tipo_Conta = t;
+    public void setTipo_Conta(String tipo_Conta) {
+        this.tipo_Conta = tipo_Conta;
     }
 
     public String getDono() {
         return this.dono;
     }
 
-    public void setDono(String d) {
-        this.dono = d;
+    public void setDono(String dono) {
+        this.dono = dono;
     }
 
     public float getSaldo() {
         return this.saldo;
     }
 
-    public void setSaldo(float s) {
-        this.saldo = s;
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
     }
 
     public boolean getStatus() {
         return this.status;
     }
 
-    public void setStatus(boolean st) {
-        this.status = st;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
-
+//Métodos Personalizados
     public void estado_Atual() {
         System.out.println("_________________________________");
         System.out.println("Conta: " + this.getNum_Conta());
@@ -62,7 +62,6 @@ public class BancoNu {
         System.out.println("Status: " + this.getStatus());
     }
 
-    //Métodos Personalizados
     public void abrir_Conta(String t) {
         this.setTipo_Conta(t);
         this.setStatus(true);
@@ -87,9 +86,9 @@ public class BancoNu {
 
     public void sacar(float v) {
         if (this.getStatus()) {
-            if (getSaldo() >= v) {
+            if (this.getSaldo() >= v) {
                 this.setSaldo(this.getSaldo() - v);
-                System.out.println("Saque realiazido na conta de " + getDono());
+                System.out.println("Saque realiazido na conta de " + this.getDono());
             } else {
                 System.out.println("Saldo insuficiente para saque.");
             }
@@ -111,12 +110,12 @@ public class BancoNu {
         int v = 0;
         if (this.getTipo_Conta() == "CC") {
             v = 12;
-        } else if (getTipo_Conta() == "CP") {
+        } else if (this.getTipo_Conta() == "CP") {
             v = 20;
         }
         if (this.getStatus()) {
             this.setSaldo(this.getSaldo() - v);
-            System.out.println("Mensalidade paga com sucesso por " + getDono());
+            System.out.println("Mensalidade paga com sucesso por " + this.getDono());
         } else {
             System.out.println("Impossível pagar a mensalidade.");
         }

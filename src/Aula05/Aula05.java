@@ -6,10 +6,10 @@ public class Aula05 {
         p1.setNum_Conta(1111);
         p1.setDono("Everton");
         p1.abrir_Conta("CC");
-        p1.estado_Atual();
         p1.depositar(100);
         p1.sacar(150);
         p1.fechar_Conta();
+        p1.estado_Atual();
         System.out.println("____________________________________");
         BancoNu p2 = new BancoNu();
         p2.setNum_Conta(2222);
