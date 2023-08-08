@@ -13,18 +13,18 @@ public class Lutador {
     private int empates;
 //Métodos Públicos
     public void apresentar(){
-        System.out.println("Lutador: " + this.getNome());
-        System.out.println("Origem: " + this.getNacionalidade());
-        System.out.println("Idade: " + this.getIdade() + "anos");
-        System.out.println("Altura: " + this.getAltura() + "m");
+        System.out.println("-------------------------------------------------------");
+        System.out.println("CHEGOU A HORA! APRESENTAMOS O LUTADOR... " + this.getNome());
+        System.out.println("Diretamente do(a)... " + this.getNacionalidade());
+        System.out.println("Com " + this.getIdade() + " anos e " + this.getAltura() + "m");
         System.out.println("Pesando: " + this.getPeso() + "Kgs");
         System.out.println("Ganhou: " + this.getVitorias());
         System.out.println("Perdeu: " + this.getDerrotas());
         System.out.println("Empatou: " + this.getEmpates());
+        System.out.println("-------------------------------------------------------");
     }
     public void status(){
-        System.out.println(this.getNome());
-        System.out.println("É um peso: " + getCategoria());
+        System.out.println(this.getNome() + " é um peso: " + getCategoria());
         System.out.println(this.getVitorias() + " Vitórias.");
         System.out.println(this.getDerrotas() + " Derrotas.");
         System.out.println(this.getEmpates() + " Empates.");
@@ -73,15 +73,15 @@ public class Lutador {
 
     private void setCategoria() {
         if (peso < 52.2){
-            categoria = "Inválido";
+            this.categoria = "Inválido";
         }else if(peso <= 72.3){
-            categoria = "Leve";
+            this.categoria = "Leve";
         } else if (peso <= 83.9) {
-            categoria = "Médio";
+            this.categoria = "Médio";
         } else if (peso <= 120.2) {
-            categoria = "Pesado";
+            this.categoria = "Pesado";
         }else {
-            categoria = "Inválido";
+            this.categoria = "Inválido";
         }
     }
 
